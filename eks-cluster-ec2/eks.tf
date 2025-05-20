@@ -18,15 +18,7 @@ resource "aws_security_group" "online-shop-eks-cluster" {
 
     }
   }
-# Allow NodePort range (30000-32767)
-  ingress {
-    from_port   = 30000
-    to_port     = 32767
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-    description = "Allow NodePort range for Kubernetes services"
-  }
-
+  
   #outbound traffic
   egress {
     from_port   = 0
